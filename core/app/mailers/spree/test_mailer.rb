@@ -5,5 +5,9 @@ module Spree
       subject = "#{Spree::Config[:site_name]} #{Spree.t('test_mailer.test_email.subject')}"
       mail(to: recipient.email, from: from_address, subject: subject)
     end
+
+    def contact_email(dane)
+      mail(to: dane.email, from: dane.from_address, subject: dane.subject)
+    end
   end
 end
