@@ -48,7 +48,7 @@ module Spree
     end
 
     def amount
-      (price * quantity).to_i
+      (price).to_i
     end
     alias subtotal amount
 
