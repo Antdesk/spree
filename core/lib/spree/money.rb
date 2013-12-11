@@ -188,6 +188,7 @@ module Spree
 
       # if negative, multiply by -1; otherwise, return positive cents
       negative ? cents * -1 : cents
+      return cents.to_i
     end
 
     def to_s
