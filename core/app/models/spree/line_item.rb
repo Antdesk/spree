@@ -48,7 +48,7 @@ module Spree
     end
 
     def amount
-      price * quantity
+      (price * quantity).to_i
     end
     alias subtotal amount
 
@@ -57,7 +57,7 @@ module Spree
     end
 
     def final_amount
-      amount + adjustment_total.to_i
+      amount + adjustment_total
     end
     alias total final_amount
 
