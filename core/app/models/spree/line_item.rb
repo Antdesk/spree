@@ -53,7 +53,7 @@ module Spree
     alias subtotal amount
 
     def discounted_amount
-      amount + promo_total
+      (amount + promo_total).to_i
     end
 
     def final_amount
