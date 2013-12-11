@@ -35,7 +35,7 @@ module Spree
 
     def copy_price
       if variant
-        self.price = variant.price.to_i if price.nil?
+        self.price = variant.price if price.nil?
         self.cost_price = variant.cost_price if cost_price.nil?
         self.currency = variant.currency if currency.nil?
       end
@@ -48,16 +48,16 @@ module Spree
     end
 
     def amount
-      (price).to_i
+      price * quantity
     end
     alias subtotal amount
 
     def discounted_amount
-      (amount + promo_total).to_i
+      amount + promo_total
     end
 
     def final_amount
-      (amount + adjustment_total).to_i
+      amount + adjustment_total
     end
     alias total final_amount
 
@@ -67,7 +67,7 @@ module Spree
     alias single_display_amount single_money
 
     def money
-      Spree::Money.new(amount, { currency: currency })
+      Spree::Money.new(amount2, { currency: currency })
     end
     alias display_total money
     alias display_amount money
