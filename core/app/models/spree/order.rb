@@ -117,8 +117,7 @@ module Spree
     end
 
     def display_item_total
-      render :json => (item_total.to_i) and return
-      Spree::Money.new((item_total.to_i).to_f, { currency: currency })
+      Spree::Money.new(item_total.to_i, { currency: currency })
     end
 
     def display_adjustment_total
