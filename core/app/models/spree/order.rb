@@ -117,7 +117,8 @@ module Spree
     end
 
     def display_item_total
-      Spree::Money.new(item_total.to_i() + 22.2, { currency: currency })
+      #Spree::Money.new(item_total.to_i() + 22.2, { currency: currency })
+      Spree::Money.new(22.2.to_int, { currency: currency })
     end
 
     def display_adjustment_total
