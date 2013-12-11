@@ -57,7 +57,7 @@ module Spree
     end
 
     def final_amount
-      amount + adjustment_total.to_f
+      amount + adjustment_total.to_i
     end
     alias total final_amount
 
