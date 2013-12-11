@@ -62,6 +62,7 @@ module Spree
     alias total final_amount
 
     def single_money
+      return :json => price
       Spree::Money.new(price.to_i(), { currency: currency })
     end
     alias single_display_amount single_money
