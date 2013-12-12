@@ -59,7 +59,7 @@ module Spree
     def final_amount
       #amount + adjustment_total
     end
-    alias total final_amount
+    
 
     def single_money
       Spree::Money.new(price, { currency: currency })

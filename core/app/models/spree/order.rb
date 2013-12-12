@@ -451,7 +451,7 @@ module Spree
       @coupon_code = code.strip.downcase rescue nil
     end
 
-    def can_add_coupon?
+    def can_add_coupon
       Spree::Promotion.order_activatable?(self)
     end
 
