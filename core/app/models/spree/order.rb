@@ -214,7 +214,7 @@ module Spree
     def line_item_adjustment_totals
       Hash[self.line_item_adjustments.eligible.group_by(&:label).map do |label, adjustments|
         total = adjustments.sum(&:amount)
-        [label, Spree::Money.new(total, { currency: currency })]
+        [label, Spree::Money.new(total.to_i, { currency: currency })]
       end]
     end
 
