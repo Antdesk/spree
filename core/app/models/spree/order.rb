@@ -146,7 +146,7 @@ module Spree
     end
 
     def display_total
-      Spree::Money.new(total, { currency: currency })
+      Spree::Money.new(total.to_i, { currency: currency })
     end
 
     def to_param
