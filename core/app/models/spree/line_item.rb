@@ -66,7 +66,7 @@ module Spree
     alias single_display_amount single_money
 
     def money
-      Spree::Money.new(amount, { currency: currency })
+      Spree::Money.new(amount.to_i, { currency: currency })
     end
     alias display_total money
     alias display_amount money
