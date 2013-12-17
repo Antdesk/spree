@@ -75,6 +75,10 @@ module Spree
       self.quantity = 0 if quantity.nil? || quantity < 0
     end
 
+    def amount2
+      amount.to_i
+    end
+
     def sufficient_stock?
       Stock::Quantifier.new(variant_id).can_supply? quantity
     end
