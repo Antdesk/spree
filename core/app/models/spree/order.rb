@@ -129,6 +129,10 @@ module Spree
       Spree::Money.new(outstanding_balance, { currency: currency })
     end
 
+    def amount2
+      total.to_i
+    end
+
     def display_item_total
       Spree::Money.new(item_total, { currency: currency })
     end
