@@ -7,9 +7,15 @@ Spree.ready ($) ->
   if ($ '#checkout_form_address').is('*')
     alert('pv')
     ($ '#checkout_form_address').validate({
-      submitHandler: (form) ->
-        alert('test')
-        form.submit()
+      rules: {
+        'order[bill_address_attributes][firstname]':{
+          required: {
+            depends: ->
+              $(this).val('test')
+              return true
+          }
+        }
+      }
     })
     alert('pov')
 
