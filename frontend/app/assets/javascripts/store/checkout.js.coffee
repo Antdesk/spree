@@ -21,7 +21,21 @@ Spree.ready ($) ->
     )
 
     $(".required").blur()
+
+    jQuery.validator.messages.required = "";
     ($ '#checkout_form_address').validate({
+      invalidHandler: (e, validator) ->
+        errors = validator.numberOfInvalids()
+        if (errors)
+          message = 'You missed 1 field. It has been highlighted below' if errors == 1
+          message = 'You missed ' + errors + ' fields.  They have been highlighted below' if errors > 1
+
+          $("div.error span").html(message)
+          $("div.error").show()
+        else
+          $("div.error").hide()
+      
+      ,
       rules: {
         'order[bill_address_attributes][firstname]':{
           required: true,
@@ -29,19 +43,23 @@ Spree.ready ($) ->
         }
         'order[bill_address_attributes][lastname]':{
           required: true,
-          #notEqual: "*Last Name"
+          notEqual: "*Last Name"
         }
         'order[bill_address_attributes][address1]':{
           required: true
+          notEqual: "*Last Name"
         }
         'order[bill_address_attributes][city]':{
           required: true
+          notEqual: "*Last Name"
         }
         'order[bill_address_attributes][zipcode]':{
           required: true
+          notEqual: "*Last Name"
         }
         'order[bill_address_attributes][phone]':{
           required: true
+          notEqual: "*Last Name"
         }
       }
     })
