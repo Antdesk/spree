@@ -5,14 +5,18 @@ Spree.disableSaveOnClick = ->
 Spree.ready ($) ->
   Spree.Checkout = {}
   if ($ '#checkout_form_address').is('*')
+    jQuery.validator.addMethod("notEqual", (value, element, param) ->
+      return this.optional(element) || value != param
+    , "Fyll i detta fält*")
     ($ '#checkout_form_address').validate({
       rules: {
         'order[bill_address_attributes][firstname]':{
-          required: true
+          required: true,
+          notEqual: "*First Name"
         }
         'order[bill_address_attributes][lastname]':{
           required: true,
-          notEqual: "*Last Name"
+          notEqual: $(this).attr('title')
         }
         'order[bill_address_attributes][address1]':{
           required: {
