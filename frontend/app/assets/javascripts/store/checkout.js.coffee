@@ -11,18 +11,18 @@ Spree.ready ($) ->
     ($ '#checkout_form_address').validate({
       rules: {
         'order[bill_address_attributes][firstname]':{
-          required: true,
+          required: false,
           notEqual: "*First Name"
         }
         'order[bill_address_attributes][lastname]':{
           required: true,
-          notEqual: $(this).attr('title')
+          notEqual: "*Last Name"
         }
         'order[bill_address_attributes][address1]':{
           required: {
             depends: ->
               if $(this).val() == $(this).attr('title')
-                $(this).val('')
+                return false
               return true
           }
         }
@@ -30,8 +30,8 @@ Spree.ready ($) ->
           required: {
             depends: ->
               if $(this).val() == $(this).attr('title')
-                $(this).val('')
-              return true
+                return true
+              return false
           }
         }
         'order[bill_address_attributes][zipcode]':{
