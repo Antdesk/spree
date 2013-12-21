@@ -40,32 +40,36 @@ Spree.ready ($) ->
       rules: {
         'order[bill_address_attributes][firstname]':{
           required: true,
-          notEqual: "*First Nameddd"
+          notEqual: "*First Name"
         }
         'order[bill_address_attributes][lastname]':{
           required: true,
           notEqual: "*Last Name"
         }
         'order[bill_address_attributes][address1]':{
-          required: true
+          required: true,
           notEqual: "*Last Name"
         }
         'order[bill_address_attributes][city]':{
-          required: true
+          required: true,
           notEqual: "*Last Name"
         }
         'order[bill_address_attributes][zipcode]':{
-          required: true
+          required: true,
           notEqual: "*Last Name"
         }
         'order[bill_address_attributes][phone]':{
-          required: true
+          required: true,
           notEqual: "*Last Name"
         }
       }
       messages: {
         'order[bill_address_attributes][firstname]':{
-          required: " "
+          required: " s"
+        }
+        'order[bill_address_attributes][lastname]':{
+          required: " s2",
+          notEqual: ' dupa'
         }
       }
     })
