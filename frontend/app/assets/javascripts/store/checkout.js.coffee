@@ -12,11 +12,11 @@ Spree.ready ($) ->
       rules: {
         'order[bill_address_attributes][firstname]':{
           required: true,
-          notEqual: "*First Name"
+          #notEqual: "*First Name"
         }
         'order[bill_address_attributes][lastname]':{
           required: true,
-          notEqual: "*Last Name"
+          #notEqual: "*Last Name"
         }
         'order[bill_address_attributes][address1]':{
           required: true
