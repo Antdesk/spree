@@ -30,11 +30,11 @@ Spree.ready ($) ->
           message = 'You missed 1 field. It has been highlighted below' if errors == 1
           message = 'You missed ' + errors + ' fields.  They have been highlighted below' if errors > 1
 
-          $("div.error span").html(message)
-          $("div.error").show()
+          $("#ae span").html(message)
+          $("#ae").show()
         else
-          $("div.error").hide()
-      
+          $("#ae").hide()
+
       ,
       rules: {
         'order[bill_address_attributes][firstname]':{
