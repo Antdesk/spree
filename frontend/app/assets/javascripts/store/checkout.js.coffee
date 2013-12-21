@@ -67,10 +67,12 @@ Spree.ready ($) ->
       highlight: (input) ->
         $(input).addClass('ea')
       ,
+      unhighlight: (input) ->
+        $(input).removeClass('ea')
+      ,
       errorPlacement: (error, element) ->
     })
 
-    alert('pov')
 
     getCountryId = (region) ->
       $('#' + region + 'country select').val()
