@@ -15,6 +15,46 @@ Spree.ready ($) ->
               return true
           }
         }
+        'order[bill_address_attributes][lastname]':{
+          required: {
+            depends: ->
+              if $(this).val() == $(this).attr('title')
+                $(this).val('')
+              return true
+          }
+        }
+        'order[bill_address_attributes][address1]':{
+          required: {
+            depends: ->
+              if $(this).val() == $(this).attr('title')
+                $(this).val('')
+              return true
+          }
+        }
+        'order[bill_address_attributes][city]':{
+          required: {
+            depends: ->
+              if $(this).val() == $(this).attr('title')
+                $(this).val('')
+              return true
+          }
+        }
+        'order[bill_address_attributes][zipcode]':{
+          required: {
+            depends: ->
+              if $(this).val() == $(this).attr('title')
+                $(this).val('')
+              return true
+          }
+        }
+        'order[bill_address_attributes][phone]':{
+          required: {
+            depends: ->
+              if $(this).val() == $(this).attr('title')
+                $(this).val('')
+              return true
+          }
+        }
       }
     })
 
