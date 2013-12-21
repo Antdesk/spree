@@ -15,7 +15,7 @@ Spree.ready ($) ->
           notEqual: "*First Name"
         }
         'order[bill_address_attributes][lastname]':{
-          required: true,
+          required: false,
           notEqual: "*Last Name"
         }
         'order[bill_address_attributes][address1]':{
