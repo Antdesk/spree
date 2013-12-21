@@ -5,7 +5,11 @@ Spree.disableSaveOnClick = ->
 Spree.ready ($) ->
   Spree.Checkout = {}
   if ($ '#checkout_form_address').is('*')
-    ($ '#checkout_form_address').validate()
+    ($ '#checkout_form_address').validate({
+      submitHandler: (form) ->
+        alert('test')
+        form.submit()
+    })
 
     getCountryId = (region) ->
       $('#' + region + 'country select').val()
