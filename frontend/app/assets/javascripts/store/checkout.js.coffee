@@ -63,7 +63,11 @@ Spree.ready ($) ->
           required: true,
           notEqual: "*Last Name"
         }
-      }
+      },
+      highlight: (input) ->
+        $(input).addClass('ea')
+      ,
+      errorPlacement: (error, element) ->
     })
 
     alert('pov')
