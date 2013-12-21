@@ -65,11 +65,12 @@ Spree.ready ($) ->
       }
       messages: {
         'order[bill_address_attributes][firstname]':{
-          required: " s"
+          required: '',
+          notEqual: ''
         }
         'order[bill_address_attributes][lastname]':{
-          required: " s2",
-          notEqual: ' dupa'
+          required: '',
+          notEqual: ''
         }
       }
     })
