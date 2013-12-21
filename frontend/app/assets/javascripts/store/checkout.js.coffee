@@ -24,6 +24,7 @@ Spree.ready ($) ->
     $(".required").blur()
 
     jQuery.validator.messages.required = "";
+    jQuery.validator.messages.notEqual = "";
     ($ '#checkout_form_address').validate({
       invalidHandler: (e, validator) ->
         errors = validator.numberOfInvalids()
@@ -61,16 +62,6 @@ Spree.ready ($) ->
         'order[bill_address_attributes][phone]':{
           required: true,
           notEqual: "*Last Name"
-        }
-      }
-      messages: {
-        'order[bill_address_attributes][firstname]':{
-          required: '',
-          notEqual: ''
-        }
-        'order[bill_address_attributes][lastname]':{
-          required: '',
-          notEqual: ''
         }
       }
     })
