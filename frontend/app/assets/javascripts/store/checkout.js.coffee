@@ -5,18 +5,19 @@ Spree.disableSaveOnClick = ->
 Spree.ready ($) ->
   Spree.Checkout = {}
   if ($ '#checkout_form_address').is('*')
-    alert('pv')
     ($ '#checkout_form_address').validate({
       rules: {
         'order[bill_address_attributes][firstname]':{
           required: {
             depends: ->
-              $(this).val('test')
+              if $(this).val() == $(this).attr('title')
+                $(this).val('')
               return true
           }
         }
       }
     })
+
     alert('pov')
 
     getCountryId = (region) ->
