@@ -8,8 +8,7 @@ Spree.ready ($) ->
     ($ '#checkout_form_address').validate({
       rules: {
         'order[bill_address_attributes][firstname]':{
-          required: true,
-          notEqual: $(this).attr('title')
+          required: true
         }
         'order[bill_address_attributes][lastname]':{
           required: true,
