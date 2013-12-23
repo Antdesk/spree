@@ -37,19 +37,21 @@ Spree.ready ($) ->
         }
         'order[bill_address_attributes][address1]':{
           required: true,
-          notEqual: "*Last Name"
+          notEqual: "*Street Address"
         }
         'order[bill_address_attributes][city]':{
           required: true,
-          notEqual: "*Last Name"
+          notEqual: "*City"
         }
         'order[bill_address_attributes][zipcode]':{
           required: true,
-          notEqual: "*Last Name"
+          notEqual: "*Zip"
         }
         'order[bill_address_attributes][phone]':{
           required: true,
-          notEqual: "*Last Name"
+          notEqual: "*Phone",
+          number: true
+
         }
       },
       highlight: (input) ->
