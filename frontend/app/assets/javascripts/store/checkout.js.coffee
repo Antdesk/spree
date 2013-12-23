@@ -9,19 +9,7 @@ Spree.ready ($) ->
     (value, element, param) ->
       return this.optional(element) || value != param
     , "Fyll i detta fält*")
-    $(".required").focus((srcc) ->
-      $(this).removeClass('defaultTextActive')
-      if $(this).val() == $(this).attr('title')
-        $(this).val('')
-    )
-    $(".required").blur(->
-      if $(this).val() == ""
-        $(this).addClass('defaultTextActive')
-        $(this).val($(this)[0].title)
 
-    )
-
-    $(".required").blur()
 
     jQuery.validator.messages.required = "";
     jQuery.validator.messages.notEqual = "";
