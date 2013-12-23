@@ -51,7 +51,11 @@ Spree.ready ($) ->
           required: true,
           notEqual: "*Phone",
           number: true
-
+        }
+        'order[email]':{
+          required: true,
+          notEqual: "*Email",
+          email: true
         }
       },
       highlight: (input) ->
