@@ -1,7 +1,6 @@
 module Spree
   class LocaleController < Spree::StoreController
     def set
-      render :json => params[:locale] + "TESTESTESTESTESTSETSE !!!!!!!!!!!!!!!!!!!" and return
       if request.referer && request.referer.starts_with?('http://' + request.host)
         session['user_return_to'] = request.referer
       end
