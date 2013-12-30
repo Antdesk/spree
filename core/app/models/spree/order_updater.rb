@@ -102,7 +102,7 @@ module Spree
     def update_payment_state
 
       #line_item are empty when user empties cart
-      if line_items.empty? || round_money(order.payment_total) < round_money(order.total)
+      if line_items.empty? || round_money(order.payment_total) < round_money(order.total.to_i)
         if payments.present? && payments.last.state == 'failed'
           order.payment_state = 'failed'
         else
