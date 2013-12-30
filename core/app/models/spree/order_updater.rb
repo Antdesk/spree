@@ -113,10 +113,6 @@ module Spree
       else
         order.payment_state = 'paid'
       end
-      if order.payment_total < order.total.to_i
-        order.payment_state = 'test'
-
-      end
 
       order.state_changed('payment')
     end
