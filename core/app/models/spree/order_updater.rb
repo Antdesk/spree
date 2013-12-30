@@ -100,7 +100,11 @@ module Spree
     #
     # The +payment_state+ value helps with reporting, etc. since it provides a quick and easy way to locate Orders needing attention.
     def update_payment_state
-      proxy.logger.info 'testestest !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+      'testestest !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'.to_yaml
+      round_money(order.total.to_i).to_yaml
+      round_money(order.total.to_i).inspect
+      debug round_money(order.total.to_i)
+      raise(round_money(order.total.to_i))
       proxy.logger.info "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! payment " + round_money(order.payment_total).to_s + " " + round_money(order.total.to_i).to_s
 
       #line_item are empty when user empties cart
@@ -116,7 +120,7 @@ module Spree
         order.payment_state = 'paid'
       end
 
-      order.state_changed('payment')
+      order.state_changed('payment').
     end
 
     # Updates each of the Order adjustments.
