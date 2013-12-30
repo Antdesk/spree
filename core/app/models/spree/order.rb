@@ -339,7 +339,7 @@ module Spree
     end
 
     def outstanding_balance
-      total - payment_total
+      total.to_i - payment_total
     end
 
     def outstanding_balance?
