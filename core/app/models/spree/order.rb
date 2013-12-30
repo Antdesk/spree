@@ -339,6 +339,8 @@ module Spree
     end
 
     def outstanding_balance
+      logger.error('test')
+      logger.error(total.to_i - payment_total)
       total.to_i - payment_total
     end
 
