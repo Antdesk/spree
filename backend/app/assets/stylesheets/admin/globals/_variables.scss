@@ -16,15 +16,16 @@ $color-3:                        #d1050c !default;    // Light Blue
 $color-4:                        #ee6058 !default;    // Dark Blue
 $color-5:                        #C60F13 !default;    // Red
 $color-6:                        #FF9300 !default;    // Yellow
+$color-7:                        #f07c00 !default;
 
 // Body base colors
 $color-body-bg:                  $color-1 !default;
 $color-body-text:                $color-4 !default;
 $color-headers:                  $color-4 !default;
 $color-link:                     $color-3 !default;
-$color-link-hover:               $color-2 !default;
-$color-link-active:              $color-2 !default;
-$color-link-focus:               $color-2 !default;
+$color-link-hover:               $color-7 !default;
+$color-link-active:              $color-7 !default;
+$color-link-focus:               $color-7 !default;
 $color-link-visited:             $color-3 !default;
 $color-border:                   very-light($color-3, 12) !default;
 
@@ -41,7 +42,7 @@ $color-tbl-thead:                very-light($color-3, 4) !default;
 // Button colors
 $color-btn-bg:                   $color-3 !default;
 $color-btn-text:                 $color-1 !default;
-$color-btn-hover-bg:             $color-2 !default;
+$color-btn-hover-bg:             $color-7 !default;
 $color-btn-hover-text:           $color-1 !default;
 
 // Actions colors
@@ -65,13 +66,13 @@ $color-action-mail-brd:          very-light($color-success, 20 ) !default;
 // Select2 select field colors
 $color-sel-bg:                   $color-3 !default;
 $color-sel-text:                 $color-1 !default;
-$color-sel-hover-bg:             $color-2 !default;
+$color-sel-hover-bg:             $color-7 !default;
 $color-sel-hover-text:           $color-1 !default;
 
 // Text inputs colors
 $color-txt-brd:                  $color-border !default;
 $color-txt-text:                 $color-3 !default;
-$color-txt-hover-brd:            $color-2 !default;
+$color-txt-hover-brd:            $color-7 !default;
 
 // States label colors
 $color-ste-complete-bg:          $color-success !default;
