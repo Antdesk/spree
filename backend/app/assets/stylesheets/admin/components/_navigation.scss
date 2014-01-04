@@ -23,13 +23,13 @@ nav.menu {
       }
 
       &.active a {
-        color: $color-2;
+        color: $color-7;
         border-left-width: 0;
-        border-bottom-color: $color-2;
+        border-bottom-color: $color-7;
       }
 
       &:hover a {
-        color: $color-2;
+        color: $color-7;
       }
     }
   }
@@ -53,7 +53,7 @@ nav.menu {
 
       &:hover {
         i {
-          color: $color-2;
+          color: $color-7;
         }
       }
     }
@@ -128,7 +128,7 @@ nav.menu {
 }
 
 #sub-menu {
-  background-color: $color-2;
+  background-color: $color-7;
   padding-bottom: 0;
 
   li {
@@ -148,7 +148,7 @@ nav.menu {
         position: absolute;
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
-        border-top: 5px solid $color-2;
+        border-top: 5px solid $color-7;
         bottom: 0px;
         margin-bottom: -5px;
         left: 50%;
