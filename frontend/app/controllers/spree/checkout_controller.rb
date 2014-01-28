@@ -35,7 +35,7 @@ module Spree
 
         if @order.completed?
           session[:order_id] = nil
-          flash.notice = "super"
+          flash.notice = "super check this out"
           flash[:commerce_tracking] = "nothing special"
           redirect_to completion_route
         else
