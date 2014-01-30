@@ -157,6 +157,6 @@ Spree::Core::Engine.routes.draw do
   end
 
   match '/admin', :to => 'admin/orders#index', :as => :admin
-  
-  match '/admin', :to => 'user_sessions#new', :as => :login
+
+
 end

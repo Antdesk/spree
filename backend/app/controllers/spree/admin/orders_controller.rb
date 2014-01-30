@@ -8,6 +8,7 @@ module Spree
       respond_to :html
 
       def index
+        redirect_to '/dupa' and return
         params[:q] ||= {}
         params[:q][:completed_at_not_null] ||= '1' if Spree::Config[:show_only_complete_orders_by_default]
         @show_only_completed = params[:q][:completed_at_not_null] == '1'
