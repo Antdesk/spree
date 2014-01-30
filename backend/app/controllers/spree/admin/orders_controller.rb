@@ -120,7 +120,7 @@ module Spree
       private
         def load_order
           @order = Order.includes(:adjustments).find_by_number!(params[:id])
-          render :json => '/dudapdapdpapadpadpapd'
+
           authorize! action, @order
         end
 
