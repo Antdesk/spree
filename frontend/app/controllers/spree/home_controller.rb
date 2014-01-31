@@ -9,7 +9,11 @@ module Spree
     end
 
     def login
-      render :json => try_spree_current_user and return
+      if try_spree_current_user
+        render :json => "admin" and return
+      else
+        render :json => "login" and return
+      end
     end
   end
 end
