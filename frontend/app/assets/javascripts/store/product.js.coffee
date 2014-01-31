@@ -4,8 +4,7 @@ $ ->
     ($ '#main-image').data 'selectedThumb', ($ '#main-image img').attr('src')
     thumbnails.find('li').eq(0).addClass 'selected'
     alert('test')
-    thumbnails.find('a').each (event) ->
-      ($ event.currentTarget).fancybox()
+    thumbnails.find('a').fancybox()
     alert('po tescie')
     thumbnails.find('a').on 'click', (event) ->
 
