@@ -7,5 +7,9 @@ module Spree
       @searcher = build_searcher(params)
       @products = @searcher.retrieve_products
     end
+
+    def login
+      render :json => try_spree_current_user and return
+    end
   end
 end
