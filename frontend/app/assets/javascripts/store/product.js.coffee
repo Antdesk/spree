@@ -3,8 +3,12 @@ $ ->
     thumbnails = ($ '#product-images ul.thumbnails')
     ($ '#main-image').data 'selectedThumb', ($ '#main-image img').attr('src')
     thumbnails.find('li').eq(0).addClass 'selected'
-    thumbnails.find('a').on 'click', (event) ->
+    alert('test')
+    thumbnails.find('a').each (event) ->
       ($ event.currentTarget).fancybox()
+    alert('po tescie')
+    thumbnails.find('a').on 'click', (event) ->
+
       alert(($ event.currentTarget).attr('href'))
 
       ($ '#main-image').data 'selectedThumb', ($ event.currentTarget).attr('href')
