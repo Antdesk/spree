@@ -4,9 +4,9 @@ $ ->
     ($ '#main-image').data 'selectedThumb', ($ '#main-image img').attr('src')
     thumbnails.find('li').eq(0).addClass 'selected'
     thumbnails.find('a').on 'click', (event) ->
+      ($ event.currentTarget).fancybox()
       alert(($ event.currentTarget).attr('href'))
-      alert(($ event.currentTarget))
-      alert(($ event.currentTarget))
+
       ($ '#main-image').data 'selectedThumb', ($ event.currentTarget).attr('href')
       ($ '#main-image').data 'selectedThumbId', ($ event.currentTarget).parent().attr('id')
       ($ this).mouseout ->
