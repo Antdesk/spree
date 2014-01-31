@@ -4,10 +4,12 @@ $ ->
     ($ '#main-image').data 'selectedThumb', ($ '#main-image img').attr('src')
     thumbnails.find('li').eq(0).addClass 'selected'
     alert('test')
-    thumbnails.find('a').fancybox()
+    thumbnails2 = ($ '#product-images ul.thumbnails a')
+    thumbnails2.each ->
+      alert('aa')
     alert('po tescie')
     thumbnails.find('a').on 'click', (event) ->
-
+      ($ event.currentTarget).fancybox()
       alert(($ event.currentTarget).attr('href'))
 
       ($ '#main-image').data 'selectedThumb', ($ event.currentTarget).attr('href')
