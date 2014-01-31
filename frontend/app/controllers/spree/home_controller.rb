@@ -12,7 +12,8 @@ module Spree
       if try_spree_current_user
         render :json => "admin" and return
       else
-        render :json => "login" and return
+        #render :json => "login" and return
+        redirect_to :controller => 'user_sessions', :action => 'new'
       end
     end
   end
