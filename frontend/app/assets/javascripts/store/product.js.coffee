@@ -5,20 +5,13 @@ $ ->
     thumbnails.find('li').eq(0).addClass 'selected'
     #alert('test')
     thumbnails2 = ($ '#product-images ul.thumbnails a')
-    $(".fancybox").fancybox()
-    ###$.each(thumbnails2, (i, val) ->
+    #$(".fancybox").fancybox()
+    .each(thumbnails2, (i, val) ->
 
       alert('fancy ' + ($ this).html())
+      ($ this).fancybox()
 
-      sv2 = ($ this).prop('src')
-      alert('str ' + sv + ' sv2 ' + sv2 + ' sv3 ' + ($ this).val())
-      sv2 = sv2.replace("mini", "original")
-      ($ this).fancybox({
-        beforeLoad: ->
-          this.title =  $(this.element).atr('src')
-      })
-
-    )###
+    )
     thumbnails.find('a').on 'click', (event) ->
       #alert('fancy2 ' + ($ event.currentTarget).html())
       #($ event.currentTarget).fancybox()
