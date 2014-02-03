@@ -15,7 +15,7 @@ $ ->
     $.each(thumbnails2, (i, val) ->
       alert(val + " " + i)
       #($ this).fanybox()
-      alert(($ this).html())
+      alert(($ this).parent().html())
     )
     thumbnails.find('a').on 'click', (event) ->
       #($ event.currentTarget).fancybox()
