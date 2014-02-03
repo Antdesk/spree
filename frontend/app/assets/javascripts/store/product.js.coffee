@@ -12,7 +12,7 @@ $ ->
       beforeLoad: ->
         this.title = $(this.element).attr('caption')
     })###
-    .each(thumbnails2, (i, val) ->
+    $.each(thumbnails2, (i, val) ->
       alert(val + " " + i)
     )
     thumbnails.find('a').on 'click', (event) ->
