@@ -15,6 +15,7 @@ $ ->
     $.each(thumbnails2, (i, val) ->
       #alert(val + " " + i)
       str = ($ this).attr('src')
+      alert('str ' +str)
       str = str.replace("mini", "original")
       alert(str)
       #($ this).attr('src') = str
