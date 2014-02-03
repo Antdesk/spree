@@ -14,7 +14,7 @@ $ ->
     })###
     $.each(thumbnails2, (i, val) ->
       #alert(val + " " + i)
-      alert('fancy ' + ($ this).html())
+      alert('fancy ' + ($ this).html() + ' ' + ($ this).attr('src'))
       sv = ($ this)[0].src
       sv2 = ($ this).prop('src')
       alert('str ' + sv + ' sv2 ' + sv2 + ' sv3 ' + ($ this).val())
