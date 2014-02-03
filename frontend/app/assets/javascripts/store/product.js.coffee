@@ -3,10 +3,9 @@ $ ->
     thumbnails = ($ '#product-images ul.thumbnails')
     ($ '#main-image').data 'selectedThumb', ($ '#main-image img').attr('src')
     thumbnails.find('li').eq(0).addClass 'selected'
-    #alert('test')
     thumbnails2 = ($ '#product-images ul.thumbnails a')
     #$(".fancybox").fancybox()
-    .each(thumbnails2, (i, val) ->
+    $.each(thumbnails2, (i, val) ->
 
       alert('fancy ' + ($ this).html())
       ($ this).fancybox()
