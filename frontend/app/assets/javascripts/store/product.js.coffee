@@ -14,6 +14,7 @@ $ ->
     })###
     $.each(thumbnails2, (i, val) ->
       #alert(val + " " + i)
+      alert('fancy ' + ($ this).html())
       str = ($ this).attr('src')
       alert('str ' +str)
       str = str.replace("mini", "original")
@@ -23,7 +24,7 @@ $ ->
         beforeLoad: ->
           this.src = str
       })
-      alert('fancy ' + ($ this).html())
+
     )
     thumbnails.find('a').on 'click', (event) ->
       #alert('fancy2 ' + ($ event.currentTarget).html())
