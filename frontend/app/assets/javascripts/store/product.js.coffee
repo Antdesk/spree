@@ -8,7 +8,10 @@ $ ->
     $.each(thumbnails2, (i, val) ->
 
       alert('fancy ' + ($ this).html())
-      ($ this).fancybox()
+      ($ this).fancybox({
+        beforeLoad: ->
+          alert("asd "+ this.src)
+      })
 
     )
     thumbnails.find('a').on 'click', (event) ->
