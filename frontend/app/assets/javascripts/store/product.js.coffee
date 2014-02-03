@@ -10,7 +10,10 @@ $ ->
       alert('fancy ' + ($ this).html())
       ($ this).fancybox({
         beforeLoad: ->
-          alert("asd "+ ($ this.element).attr('href') + " " + $(this.element))
+          hr = ($ this.element).attr('href')
+          hr = hr.replace('product', 'original')
+          alert("asd "+ hr)
+          ($ this.element).attr('href', hr)
       })
 
     )
