@@ -11,8 +11,13 @@ $ ->
       ($ this).fancybox({
         beforeLoad: ->
           hr = ($ this.element).attr('href')
-          hr = hr.replace('product', 'original')
-          alert("asd "+ hr)
+          hr = hr.replace('product/', 'original/')
+          #alert("asd "+ hr)
+          ($ this.element).attr('href', hr)
+        afterLoad: ->
+          hr = ($ this.element).attr('href')
+          hr = hr.replace('original', 'product')
+          #alert("asd "+ hr)
           ($ this.element).attr('href', hr)
       })
 
