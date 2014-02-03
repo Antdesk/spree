@@ -16,6 +16,7 @@ $ ->
       alert(val + " " + i)
       #($ this).fanybox()
       ($ this).parent().fancybox()
+      alert('fancy')
     )
     thumbnails.find('a').on 'click', (event) ->
       #($ event.currentTarget).fancybox()
