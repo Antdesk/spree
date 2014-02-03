@@ -15,14 +15,15 @@ $ ->
     $.each(thumbnails2, (i, val) ->
       #alert(val + " " + i)
       alert('fancy ' + ($ this).html())
-      str = ($ this)[0].src
-      alert('str ' +str)
-      str = str.replace("mini", "original")
-      alert(str)
+      sv = ($ this)[0].src
+      sv2 = ($ this).prop('src')
+      alert('str ' + sv + ' sv2 ' + sv2 + ' sv3 ' + ($ this).val())
+      sv2 = sv2.replace("mini", "original")
+      alert(sv2)
       #($ this).attr('src') = str
       ($ this).fancybox({
         beforeLoad: ->
-          this.src = str
+          this.src = sv2
       })
 
     )
