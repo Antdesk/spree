@@ -14,9 +14,10 @@ $ ->
     })###
     $.each(thumbnails2, (i, val) ->
       alert(val + " " + i)
+      this.fanybox()
     )
     thumbnails.find('a').on 'click', (event) ->
-      ($ event.currentTarget).fancybox()
+      #($ event.currentTarget).fancybox()
       #alert(($ event.currentTarget).attr('href'))
 
       ($ '#main-image').data 'selectedThumb', ($ event.currentTarget).attr('href')
