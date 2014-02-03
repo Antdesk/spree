@@ -15,10 +15,12 @@ $ ->
     $.each(thumbnails2, (i, val) ->
       alert(val + " " + i)
       #($ this).fanybox()
-      ($ this).parent().fancybox()
-      alert('fancy')
+      pa = ($ this).parent()
+      pa.fancybox()
+      alert('fancy ' + pa.html())
     )
     thumbnails.find('a').on 'click', (event) ->
+      alert('fancy2 ' + ($ event.currentTarget).html())
       #($ event.currentTarget).fancybox()
       #alert(($ event.currentTarget).attr('href'))
 
