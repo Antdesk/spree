@@ -13,9 +13,15 @@ $ ->
         this.title = $(this.element).attr('caption')
     })###
     $.each(thumbnails2, (i, val) ->
-      alert(val + " " + i)
-      #($ this).fanybox()
-      ($ this).fancybox()
+      #alert(val + " " + i)
+      str = ($ this).attr('src')
+      str = str.replace("mini", "original")
+      alert(str)
+      #($ this).attr('src') = str
+      ($ this).fancybox({
+        beforeLoad: ->
+          this.src = str
+      })
       alert('fancy ' + ($ this).html())
     )
     thumbnails.find('a').on 'click', (event) ->
