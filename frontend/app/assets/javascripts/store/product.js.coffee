@@ -10,7 +10,7 @@ $ ->
       alert('fancy ' + ($ this).html())
       ($ this).fancybox({
         beforeLoad: ->
-          alert("asd "+ this.src)
+          alert("asd "+ ($ this.element).attr('src'))
       })
 
     )
