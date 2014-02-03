@@ -19,8 +19,7 @@ $ ->
       sv2 = ($ this).prop('src')
       alert('str ' + sv + ' sv2 ' + sv2 + ' sv3 ' + ($ this).val())
       sv2 = sv2.replace("mini", "original")
-      alert(sv2)
-      #($ this).attr('src') = str
+
       ($ this).fancybox({
         beforeLoad: ->
           this.src = sv2
