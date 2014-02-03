@@ -8,6 +8,13 @@ $ ->
     #thumbnails2.each ->
     #  alert('aa')
     #alert('po tescie')
+    ###($ event.currentTarget).fancybox({
+      beforeLoad: ->
+        this.title = $(this.element).attr('caption')
+    })###
+    .each(thumbnails2, (i, val) ->
+      alert(val + " " + i)
+    )
     thumbnails.find('a').on 'click', (event) ->
       ($ event.currentTarget).fancybox()
       #alert(($ event.currentTarget).attr('href'))
