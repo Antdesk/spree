@@ -39,7 +39,7 @@ $ ->
       #alert('mouse enter')
       ($ '#main-image img').attr 'src', ($ event.currentTarget).find('a').attr('href')
       thumbnails.find('li').removeClass 'selected'
-      ($ event.currentTarget).parent('li').addClass 'selected'
+      ($ event.currentTarget).addClass 'selected'
 
     ###thumbnails.find('li').on 'mouseleave', (event) ->
       alert('mouse leave')
