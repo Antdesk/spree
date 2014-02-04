@@ -23,8 +23,7 @@ $ ->
 
     )###
     ($ '#main-image img').on 'click', (event) ->
-      alert('main img')
-      hr = ($ event.currentTarget).attr('href')
+      hr = ($ event.currentTarget).attr('src')
       hr = hr.replace('product/', 'original/')
       $.fancybox.open([
         {
@@ -33,17 +32,7 @@ $ ->
       ], {
         closeClick : true
       })
-    ($ '#main-image').find('img').on 'click', (event) ->
-      alert('main img2')
-      hr = ($ event.currentTarget).attr('href')
-      hr = hr.replace('product/', 'original/')
-      $.fancybox.open([
-        {
-          href: hr
-        }
-      ], {
-        closeClick : true
-      })
+    
 
     thumbnails.find('a').on 'click', (event) ->
       #alert('fancy2 ' + ($ event.currentTarget).html())
