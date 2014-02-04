@@ -3,25 +3,7 @@ $ ->
     thumbnails = ($ '#product-images ul.thumbnails')
     ($ '#main-image').data 'selectedThumb', ($ '#main-image img').attr('src')
     thumbnails.find('li').eq(0).addClass 'selected'
-    thumbnails2 = ($ '#product-images ul.thumbnails a')
-    #$(".fancybox").fancybox()
-    ###$.each(thumbnails2, (i, val) ->
 
-      alert('fancy ' + ($ this).html())
-      ($ this).fancybox({
-        beforeLoad: ->
-          hr = ($ this.element).attr('href')
-          hr = hr.replace('product/', 'original/')
-          #alert("asd "+ hr)
-          ($ this.element).attr('href', hr)
-        afterLoad: ->
-          hr = ($ this.element).attr('href')
-          hr = hr.replace('original', 'product')
-          #alert("asd "+ hr)
-          ($ this.element).attr('href', hr)
-      })
-
-    )###
     ($ '#main-image img').on 'click', (event) ->
       hr = ($ event.currentTarget).attr('src')
       hr = hr.replace('product/', 'original/')
@@ -32,12 +14,9 @@ $ ->
       ], {
         closeClick : true
       })
-    
+
 
     thumbnails.find('a').on 'click', (event) ->
-      #alert('fancy2 ' + ($ event.currentTarget).html())
-      #($ event.currentTarget).fancybox()
-      #alert(($ event.currentTarget).attr('href'))
       hr = ($ event.currentTarget).attr('href')
       hr = hr.replace('product/', 'original/')
       $.fancybox.open([
@@ -51,14 +30,17 @@ $ ->
       ($ '#main-image').data 'selectedThumb', ($ event.currentTarget).attr('href')
       ($ '#main-image').data 'selectedThumbId', ($ event.currentTarget).parent().attr('id')
       ($ this).mouseout ->
+        alert('mouse out')
         thumbnails.find('li').removeClass 'selected'
         ($ event.currentTarget).parent('li').addClass 'selected'
       false
 
     thumbnails.find('li').on 'mouseenter', (event) ->
+      alert('mouse enter')
       ($ '#main-image img').attr 'src', ($ event.currentTarget).find('a').attr('href')
 
     thumbnails.find('li').on 'mouseleave', (event) ->
+      alert('mouse leave')
       ($ '#main-image img').attr 'src', ($ '#main-image').data('selectedThumb')
 
   Spree.showVariantImages = (variantId) ->
