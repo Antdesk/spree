@@ -5,7 +5,7 @@ $ ->
     thumbnails.find('li').eq(0).addClass 'selected'
     thumbnails2 = ($ '#product-images ul.thumbnails a')
     #$(".fancybox").fancybox()
-    $.each(thumbnails2, (i, val) ->
+    ###$.each(thumbnails2, (i, val) ->
 
       alert('fancy ' + ($ this).html())
       ($ this).fancybox({
@@ -21,12 +21,19 @@ $ ->
           ($ this.element).attr('href', hr)
       })
 
-    )
+    )###
     thumbnails.find('a').on 'click', (event) ->
       #alert('fancy2 ' + ($ event.currentTarget).html())
       #($ event.currentTarget).fancybox()
       #alert(($ event.currentTarget).attr('href'))
-
+      hr = ($ event.currentTarget).attr('href')
+      hr = hr.replace('product/', 'original/')
+      $.fancybox.open([
+        {
+          href: hr
+        }
+      ])
+      
       ($ '#main-image').data 'selectedThumb', ($ event.currentTarget).attr('href')
       ($ '#main-image').data 'selectedThumbId', ($ event.currentTarget).parent().attr('id')
       ($ this).mouseout ->
