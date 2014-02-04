@@ -22,6 +22,17 @@ $ ->
       })
 
     )###
+    ($ '#main-image img').on 'click', (event) ->
+      hr = ($ event.currentTarget).attr('href')
+      hr = hr.replace('product/', 'original/')
+      $.fancybox.open([
+        {
+          href: hr
+        }
+      ], {
+        closeClick : true
+      })
+
     thumbnails.find('a').on 'click', (event) ->
       #alert('fancy2 ' + ($ event.currentTarget).html())
       #($ event.currentTarget).fancybox()
@@ -32,8 +43,10 @@ $ ->
         {
           href: hr
         }
-      ])
-      
+      ], {
+        closeClick : true
+      })
+
       ($ '#main-image').data 'selectedThumb', ($ event.currentTarget).attr('href')
       ($ '#main-image').data 'selectedThumbId', ($ event.currentTarget).parent().attr('id')
       ($ this).mouseout ->
