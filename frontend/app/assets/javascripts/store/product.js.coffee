@@ -39,9 +39,9 @@ $ ->
       alert('mouse enter')
       ($ '#main-image img').attr 'src', ($ event.currentTarget).find('a').attr('href')
 
-    thumbnails.find('li').on 'mouseleave', (event) ->
+    ###thumbnails.find('li').on 'mouseleave', (event) ->
       alert('mouse leave')
-      ($ '#main-image img').attr 'src', ($ '#main-image').data('selectedThumb')
+      ($ '#main-image img').attr 'src', ($ '#main-image').data('selectedThumb')###
 
   Spree.showVariantImages = (variantId) ->
     ($ 'li.vtmb').hide()
