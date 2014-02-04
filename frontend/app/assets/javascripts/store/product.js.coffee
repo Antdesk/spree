@@ -30,13 +30,13 @@ $ ->
       ($ '#main-image').data 'selectedThumb', ($ event.currentTarget).attr('href')
       ($ '#main-image').data 'selectedThumbId', ($ event.currentTarget).parent().attr('id')
       ($ this).mouseout ->
-        alert('mouse out')
+        #alert('mouse out')
         thumbnails.find('li').removeClass 'selected'
         ($ event.currentTarget).parent('li').addClass 'selected'
       false
 
     thumbnails.find('li').on 'mouseenter', (event) ->
-      alert('mouse enter')
+      #alert('mouse enter')
       ($ '#main-image img').attr 'src', ($ event.currentTarget).find('a').attr('href')
 
     ###thumbnails.find('li').on 'mouseleave', (event) ->
