@@ -23,6 +23,18 @@ $ ->
 
     )###
     ($ '#main-image img').on 'click', (event) ->
+      alert('main img')
+      hr = ($ event.currentTarget).attr('href')
+      hr = hr.replace('product/', 'original/')
+      $.fancybox.open([
+        {
+          href: hr
+        }
+      ], {
+        closeClick : true
+      })
+    ($ '#main-image').find('img').on 'click', (event) ->
+      alert('main img2')
       hr = ($ event.currentTarget).attr('href')
       hr = hr.replace('product/', 'original/')
       $.fancybox.open([
