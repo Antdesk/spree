@@ -7,7 +7,7 @@ module Spree
       @searcher = build_searcher(params)
       @products = @searcher.retrieve_products
       url = request.original_url
-      if url.include? 'lit-plains'
+      if url.include? 'lit-plains' or url.include? 'http://lycolife'
         redirect_to 'http://www.lycolife.se/'
       end
     end
