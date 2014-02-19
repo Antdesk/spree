@@ -6,6 +6,10 @@ module Spree
     def index
       @searcher = build_searcher(params)
       @products = @searcher.retrieve_products
+      url = request.original_url
+      if url.include? 'lit-plains'
+        redirect_to 'http://www.lycolife.se/'
+      end
     end
 
     def login
