@@ -10,8 +10,6 @@ module Spree
 
       if url.include? 'lit-plains' or url.include? 'http://lycolife'
         redirect_to 'http://www.lycolife.se/'
-      else
-        render :json => url and return
       end
     end
 
