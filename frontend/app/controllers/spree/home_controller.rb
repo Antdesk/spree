@@ -7,10 +7,12 @@ module Spree
       @searcher = build_searcher(params)
       @products = @searcher.retrieve_products
       url = request.original_url
-      render :json => url and return
-      #if url.include? 'lit-plains' or url.include? 'http://lycolife'
-      #  redirect_to 'http://www.lycolife.se/'
-      #end
+
+      if url.include? 'lit-plains' or url.include? 'http://lycolife'
+        redirect_to 'http://www.lycolife.se/'
+      else
+        render :json => url and return
+      end
     end
 
     def login
